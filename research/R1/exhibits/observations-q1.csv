@@ -1,0 +1,9 @@
+period,OPHNFB_index_2017_100,COMPNFB_index_2017_100,COMPRNFB_index_2017_100,IPDNBS_index_2017_100,frequency,source,retrieved_date
+1947-01-01,22.256,3.334,34.386,12.915,quarterly_SA_Q1,BLS_via_FRED_data_series,2026-10-24
+1973-01-01,46.272,12.972,67.460,25.191,quarterly_SA_Q1,BLS_via_FRED_data_series,2026-10-24
+1979-01-01,49.615,21.521,70.555,39.158,quarterly_SA_Q1,BLS_via_FRED_data_series,2026-10-24
+1990-01-01,57.936,40.740,75.689,63.820,quarterly_SA_Q1,BLS_via_FRED_data_series,2026-10-24
+2000-01-01,71.222,61.041,88.149,75.961,quarterly_SA_Q1,BLS_via_FRED_data_series,2026-10-24
+2010-01-01,93.743,84.143,95.086,90.272,quarterly_SA_Q1,BLS_via_FRED_data_series,2026-10-24
+2019-01-01,102.340,106.825,103.354,103.001,quarterly_SA_Q1,BLS_via_FRED_data_series,2026-10-24
+2025-01-01,116.187,143.108,109.465,125.850,quarterly_SA_Q1,BLS_via_FRED_data_series,2026-10-24
