@@ -184,6 +184,31 @@ def render():
                 "- KFF historical and current firm eligibility differs; 1999 vs 2026 dollar amounts are nominal; no inflation-adjusted comparison appears.",
                 "- Synthetic scenario rent, childcare, other living costs, tax rates, and savings are **assumptions**, not observed cost distributions.",
                 "- No missing periods filled, no regression/changepoint, no causal inference.", ""])
+
+    # E5: matched-renter income/rent categories, *not* a ratio of two medians.
+    rent_rows = []
+    for suffix,label in (("us", "United States"), ("wa", "Washington state")):
+        total = o["acs_rent_total_" + suffix + "_2024"]
+        unknown = o["acs_rent_notcomputed_" + suffix + "_2024"]
+        eligible = total - unknown
+        if eligible <= 0:
+            raise ValueError("Invalid matched-renter denominator")
+        over30 = sum(o["acs_rent_" + k + "_" + suffix + "_2024"]
+                     for k in ("30_34", "35_39", "40_49", "50plus"))
+        severe = o["acs_rent_50plus_" + suffix + "_2024"]
+        if over30 > eligible or severe > over30:
+            raise ValueError("Burden bins exceed denominator")
+        rent_rows.append(f"| {label} | {total:,.0f} | {unknown:,.0f} | {eligible:,.0f} | {over30:,.0f} | {pct(over30 / eligible * 100)} | {pct(severe / eligible * 100)} |")
+    check_index = out.index("## Checks / non-comparability")
+    out[check_index:check_index] = [
+        "## E5 — Matched-income 2024 renter burden (ACS B25070, S04)", "",
+        "| Geography | All renter units | Not computed (excluded) | Computable units | Units at ≥30% income on gross rent | ≥30% share | ≥50% share |",
+        "| --- | ---: | ---: | ---: | ---: | ---: | ---: |",
+        *rent_rows, "",
+        "Burden shares = sum of B25070 bins 007–010 divided by (001 minus 011); severe is 010 over the same denominator. "
+        "These are sample-weighted 1-year ACS estimates, not household microdata reproductions. "
+        "The published per-cell 90% margins of error do not directly supply a confidence interval for these derived ratios.", ""
+    ]
     return "\n".join(out)
 
 
