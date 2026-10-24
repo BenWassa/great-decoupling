@@ -1,0 +1,6 @@
+"id","description","earner1_gross_annual_usd","earner2_gross_annual_usd","effective_tax_rate_assumption","monthly_housing_usd","annual_worker_family_premium_usd","monthly_paid_childcare_usd","monthly_other_essentials_usd","annual_debt_service_usd","starting_liquid_savings_usd","assumption_note"
+"one_60k","two adults one child one earner 60k","60000","0","0.18","1600","7471","0","2400","3000","10000","no_paid_care_not_zero_unpaid_care; 2026 KFF family-worker-premium; all else illustrative"
+"dual_100k","two adults one child dual earners 60k plus 40k","60000","40000","0.22","1600","7471","1250","2700","3000","10000","added employment income plus paid care and transportation; illustrative"
+"one_100k","two adults one child one earner 100k","100000","0","0.22","1600","7471","0","2400","3000","10000","same total gross income as dual_100k; no paid care; hypothetical"
+"dual_low_cost","dual earners lower local costs case","60000","40000","0.20","1200","7471","800","2400","3000","10000","geographic cost scenario NOT observed state median"
+"dual_high_cost","dual earners higher local costs case","60000","40000","0.24","2900","7471","2100","2900","3000","10000","geographic cost scenario NOT observed metro median"
