@@ -51,6 +51,15 @@ Commitments = rent + paid childcare + other essentials + worker-paid family cove
 *Shock after three months of modelled baseline monthly surplus/deficit; savings plus net flows used before new borrowing. A zero shortfall does not imply a tolerable loss of savings.
 **Gross wages of one earner cease for three months; wage-tax deduction proportionately reduced, all specified living costs unchanged. The gap is remaining negative cash after using $10k liquid savings; unemployment benefits and job-linked insurance loss are not modeled.
 
+## E5 — Matched-income 2024 renter burden (ACS B25070, S04)
+
+| Geography | All renter units | Not computed (excluded) | Computable units | Units at ≥30% income on gross rent | ≥30% share | ≥50% share |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| United States | 46,101,640 | 3,147,163 | 42,954,477 | 22,237,262 | 51.8% | 26.1% |
+| Washington state | 1,175,739 | 56,522 | 1,119,217 | 567,874 | 50.7% | 23.8% |
+
+Burden shares = sum of B25070 bins 007–010 divided by (001 minus 011); severe is 010 over the same denominator. These are sample-weighted 1-year ACS estimates, not household microdata reproductions. The published per-cell 90% margins of error do not directly supply a confidence interval for these derived ratios.
+
 ## Checks / non-comparability
 
 - New-home medians and household medians describe different populations. Housing mixes, geography and mortgage rates are uncontrolled.
