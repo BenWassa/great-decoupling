@@ -129,6 +129,8 @@ def render():
     old = o["new_home_q1_1984"] / o["cps_income_1984"]
     new = o["new_home_q1_2025"] / o["cps_income_2025"]
     out.append(f"| New-home price / all-HH income (Census via FRED S05 + CPS S01) | 1984-Q1: {old:.2f}× | 2025-Q1: {new:.2f}× | change {new-old:+.2f}× | Not same buyers or mortgage-payment burden |")
+    real_change = (o["cps_real_income_2025"] / o["cps_real_income_1984"] - 1) * 100
+    out.append(f"| Real CPS median household income (Census via FRED S21; 2025 USD) | 1984: {usd(o['cps_real_income_1984'])} | 2025: {usd(o['cps_real_income_2025'])} | {pct(real_change)} change | Not size-adjusted disposable family income |")
     rent = 12 * o["acs_gross_rent_2024"] / o["acs_hh_income_2024"] * 100
     out.append(f"| 2024 national median gross rent / all-HH median income (ACS S02/S03) | {usd(o['acs_gross_rent_2024'])}/month rent | {usd(o['acs_hh_income_2024'])}/year household income | {pct(rent)} | NOT median renter burden; different denominators |")
     prior, later = 1999, 2026
