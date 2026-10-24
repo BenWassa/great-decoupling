@@ -33,6 +33,20 @@ class R2Model(unittest.TestCase):
             self.assertGreaterEqual(reproduce.lost_earner_shortfall(r, "first"), D(0))
         self.assertEqual(self.sc["one_60k"]["second"], D(0))
 
+    def test_matched_renter_burden_counts(self):
+        us = self.obs
+        base = us["acs_rent_total_us_2024"] - us["acs_rent_notcomputed_us_2024"]
+        cost = sum(us["acs_rent_" + key + "_us_2024"] for key in ("30_34", "35_39", "40_49", "50plus"))
+        self.assertEqual(base, D(42954477))
+        self.assertEqual(cost, D(22237262))
+        self.assertEqual((cost / base * 100).quantize(D("0.1")), D("51.8"))
+        self.assertIn("Washington state", reproduce.render())
+
+    def test_real_income_deflator_vintage(self):
+        self.assertEqual(self.obs["cps_real_income_1984"], D(61910))
+        self.assertEqual(self.obs["cps_real_income_2025"], D(87460))
+        self.assertIn("Not size-adjusted", reproduce.render())
+
     def test_display_and_frozen_format(self):
         self.assertEqual(reproduce.usd(D("-2000")), "-$2,000")
         self.assertEqual(reproduce.pp(D("-0.4")), "-0.4 pp")
