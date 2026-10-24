@@ -8,6 +8,7 @@ Frozen primary-source observations, retrieved 2026-10-24; calculations from the 
 | Diagnostic | Earlier observation | Later observation | Recomputed quantity | What this is NOT |
 | --- | ---: | ---: | ---: | --- |
 | New-home price / all-HH income (Census via FRED S05 + CPS S01) | 1984-Q1: 3.49× | 2025-Q1: 4.84× | change +1.35× | Not same buyers or mortgage-payment burden |
+| Real CPS median household income (Census via FRED S21; 2025 USD) | 1984: $61,910 | 2025: $87,460 | 41.3% change | Not size-adjusted disposable family income |
 | 2024 national median gross rent / all-HH median income (ACS S02/S03) | $1,487/month rent | $81,604/year household income | 21.9% | NOT median renter burden; different denominators |
 | KFF S09/S10 family coverage: worker share of premium | 1999: 26.6% | 2026: 26.4% | -0.2 pp | Not amount deducted as % household income |
 | SIPP S12 paid childcare mean (2011-dollar weekly) | 1985: $84 | 2011: $143 | 70.2% change in reported real average | Not 2026 childcare price or all-family mean |
